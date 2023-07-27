@@ -1,0 +1,14 @@
+import numpy as np
+from qiskit import *
+qc1 = QuantumCircuit(3,3)
+qc1.x(0) 
+qc1.x(2) 
+qc1.x(4) 
+qc1.barrier(range(6))
+qc1.ccx(0,1,2); 
+qc1.cx(5,4);
+qc1.barrier(range(3))
+qc1.measure(0, 0)
+qc1.measure(1,1)
+qc1.measure(2, 2)
+qc1.draw()
